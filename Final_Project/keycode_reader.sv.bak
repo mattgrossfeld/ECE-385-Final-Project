@@ -1,0 +1,8 @@
+module keycode_reader(
+//Up arrow = 8'h52
+//Down = 8'h51
+//Left = 8'50
+//Right = 8'4f
+			input [31:0] keycode,
+			output logic w_on, a_on, s_on, d_on,
+			output logic up_on, left_on, down_on, right_on);

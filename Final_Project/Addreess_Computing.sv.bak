@@ -1,0 +1,19 @@
+module Address_Computing();
+
+//...
+
+  always_comb
+  begin: sprite_address_arbitor
+  
+    case(which_sprite_to_draw)
+  	
+    DRAW_BIRD:
+    begin
+      sprite_x = drawx+BirdX+32;
+      sprite_y = drawy-BirdY+32;
+      end
+  end
+	
+  DRAW_BIRD: begin
+        SRAM_addr = (sprite_x + 320 + ((sprite_y+128) << 9)) >> 1;
+  end 
